@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: pyembedded
-Version: 1.14
+Version: 2.0
 Summary: Python library to interface basic embedded modules like RFID, GPS, GSM, LCD (16x2), DC Motor
 Home-page: UNKNOWN
 Author: Abhinav Rawat
@@ -38,6 +38,26 @@ Description: pyembedded
             $ print(rfid.get_id())
         
         
+        GPS Usage:
+        ==========
+        Run below code to get GPS related data
+        
+        Note: Use port as 'COM1', 'COM2' etc in case of windows machine. Use port as '/dev/ttyUSB0' in case of linux based devices::
+        
+            $ from pyembedded.gps_module.gps import GPS
+            $ gps = GPS(port='COM3', baud_rate=9600)
+            $ print(gps.get_lat_long())
+        
+        Other methods available::
+        
+            $ get_lat_long()
+            $ get_time()
+            $ get_quality_indicator()
+            $ get_no_of_satellites()
+            $ get_raw_data()
+        
+        
+        
         Change Log
         ==========
         
@@ -48,6 +68,10 @@ Description: pyembedded
         1.14 (12/6/2020)
         -------------------
         - Added RFID module
+        
+        2.0 (12/6/2020)
+        -------------------
+        - Added GPS module
         
 Keywords: embedded,rfid,gsm,gps,lcd,motor,raspberry pi
 Platform: UNKNOWN

@@ -28,3 +28,23 @@ Note: Use port as 'COM1', 'COM2' etc in case of windows machine. Use port as '/d
     $ from pyembedded.rfid_module.rfid import RFID
     $ rfid = RFID(port='COM3', baud_rate=9600)
     $ print(rfid.get_id())
+
+
+GPS Usage:
+==========
+Run below code to get GPS related data
+
+Note: Use port as 'COM1', 'COM2' etc in case of windows machine. Use port as '/dev/ttyUSB0' in case of linux based devices::
+
+    $ from pyembedded.gps_module.gps import GPS
+    $ gps = GPS(port='COM3', baud_rate=9600)
+    $ print(gps.get_lat_long())
+
+Other methods available::
+
+    $ get_lat_long()
+    $ get_time()
+    $ get_quality_indicator()
+    $ get_no_of_satellites()
+    $ get_raw_data()
+

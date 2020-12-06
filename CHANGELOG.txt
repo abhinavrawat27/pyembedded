@@ -8,3 +8,7 @@ Change Log
 1.14 (12/6/2020)
 -------------------
 - Added RFID module
+
+2.0 (12/6/2020)
+-------------------
+- Added GPS module

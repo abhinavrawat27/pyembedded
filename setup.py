@@ -10,7 +10,7 @@ classifiers = [
 
 setup(
     name='pyembedded',
-    version='1.14',
+    version='2.0',
     description='Python library to interface basic embedded modules like RFID, GPS, GSM, LCD (16x2), DC Motor',
     long_description=open('README.rst').read() + '\n\n' + open('CHANGELOG.txt').read(),
     url='',
