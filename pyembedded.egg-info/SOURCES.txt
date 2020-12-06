@@ -1,0 +1,13 @@
+CHANGELOG.txt
+LICENCE.txt
+MANIFEST.in
+README.rst
+setup.py
+pyembedded/__init__.py
+pyembedded.egg-info/PKG-INFO
+pyembedded.egg-info/SOURCES.txt
+pyembedded.egg-info/dependency_links.txt
+pyembedded.egg-info/requires.txt
+pyembedded.egg-info/top_level.txt
+pyembedded/rfid_module/__init__.py
+pyembedded/rfid_module/rfid.py

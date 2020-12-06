@@ -1,0 +1,58 @@
+Metadata-Version: 1.1
+Name: pyembedded
+Version: 1.14
+Summary: Python library to interface basic embedded modules like RFID, GPS, GSM, LCD (16x2), DC Motor
+Home-page: UNKNOWN
+Author: Abhinav Rawat
+Author-email: abhinavrawat92@gmail.com
+License: MIT
+Description: pyembedded
+        ==========
+        
+        Python library to interface basic embedded modules like RFID, GPS, GSM, LCD (16x2), DC Motor
+        
+        Note that some of the hardware like RFID, GPS, GSM can directly be interfaced with Windows or Linux based machine but hardware like LCD and DC Motor will require Raspberry Pi or other simillar embedded devices.
+        
+        PyPi: https://pypi.org/project/pyembedded/
+        
+        Installation:
+        =============
+        Package can be installed via pip::
+        
+            $ pip3 install pyembedded
+        
+        Verify if it is installed::
+        
+            $ import pyembedded
+            $ pyembedded.__version__
+        
+        
+        RFID Usage:
+        ===========
+        Run below basic code to get the rfid id
+        
+        Note: Use port as 'COM1', 'COM2' etc in case of windows machine. Use port as '/dev/ttyUSB0' in case of linux based devices::
+        
+            $ from pyembedded.rfid_module.rfid import RFID
+            $ rfid = RFID(port='COM3', baud_rate=9600)
+            $ print(rfid.get_id())
+        
+        
+        Change Log
+        ==========
+        
+        1.0 (12/6/2020)
+        -------------------
+        - First Release
+        
+        1.14 (12/6/2020)
+        -------------------
+        - Added RFID module
+        
+Keywords: embedded,rfid,gsm,gps,lcd,motor,raspberry pi
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
