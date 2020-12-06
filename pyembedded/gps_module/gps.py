@@ -38,9 +38,12 @@ class GPS:
         for i in range(len(data)):
             d = data[i].split(',')
             if d[0] == "$GPGGA" and len(d) == 15:
-                lat = float(d[2]) / 100
-                long = float(d[4]) / 100
-                return lat, long
+                if d[2] == '' or d[4] == '':
+                    return "N/A", "N/A"
+                else:
+                    lat = float(d[2]) / 100
+                    long = float(d[4]) / 100
+                    return lat, long
 
     def get_time(self):
         """
@@ -53,9 +56,12 @@ class GPS:
         for i in range(len(data)):
             d = data[i].split(',')
             if d[0] == "$GPGGA" and len(d) == 15:
-                time_val = int(float(d[1]) / 100)
-                time_val = time_val / 100
-                return time_val
+                if d[1] == '':
+                    return "N/A"
+                else:
+                    time_val = int(float(d[1]) / 100)
+                    time_val = time_val / 100
+                    return time_val
 
     def get_quality_indicator(self):
         """

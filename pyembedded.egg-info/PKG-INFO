@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: pyembedded
-Version: 2.0
+Version: 2.1
 Summary: Python library to interface basic embedded modules like RFID, GPS, GSM, LCD (16x2), DC Motor
 Home-page: UNKNOWN
 Author: Abhinav Rawat
@@ -69,7 +69,7 @@ Description: pyembedded
         -------------------
         - Added RFID module
         
-        2.0 (12/6/2020)
+        2.1 (12/6/2020)
         -------------------
         - Added GPS module
         

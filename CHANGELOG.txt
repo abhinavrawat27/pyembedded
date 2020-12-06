@@ -9,6 +9,6 @@ Change Log
 -------------------
 - Added RFID module
 
-2.0 (12/6/2020)
+2.1 (12/6/2020)
 -------------------
 - Added GPS module
