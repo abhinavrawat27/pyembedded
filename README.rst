@@ -5,6 +5,8 @@ Python library to interface basic embedded modules like RFID, GPS, GSM, LCD (16x
 
 Note that some of the hardware like RFID, GPS, GSM can directly be interfaced with Windows or Linux based machine but hardware like LCD and DC Motor will require Raspberry Pi or other simillar embedded devices.
 
+PyPi: https://pypi.org/project/pyembedded/
+
 Installation:
 =============
 Package can be installed via pip::
