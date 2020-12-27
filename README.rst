@@ -48,3 +48,26 @@ Other methods available::
     $ get_no_of_satellites()
     $ get_raw_data()
 
+GSM Usage:
+==========
+Run below code to interface with GSM SIMCOM module
+
+Note: Use port as 'COM1', 'COM2' etc in case of windows machine. Use port as '/dev/ttyUSB0' in case of linux based devices::
+
+    $ from pyembedded.gsm_module.gsm import GSM
+    $ import time
+    $ phone = GSM(port='COM3', baud_rate=9600)
+    $ if phone.modem_active():
+    $     phone.make_call(number='9876543210')
+    $     time.sleep(4)
+    $     phone.end_call()
+
+Other methods available::
+
+    $ phone.make_miss_call(number='9876543210', timeout=5)
+    $ phone.get_international_subscriber_identity()
+    $ phone.get_modem_serial_number()
+    $ phone.get_modem_revision_number()
+    $ phone.get_modem_model_no()
+    $ phone.get_modem_manufacturer()
+    $ phone.get_signal_strength()

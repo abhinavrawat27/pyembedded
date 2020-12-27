@@ -12,3 +12,8 @@ Change Log
 2.1 (12/6/2020)
 -------------------
 - Added GPS module
+
+3.1 (12/27/2020)
+-------------------
+- Added GSM module
+- Added modem and phone related functions
