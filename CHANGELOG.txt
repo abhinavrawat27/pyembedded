@@ -17,3 +17,4 @@ Change Log
 -------------------
 - Added GSM module
 - Added modem and phone related functions
+- Added end ongoing call
