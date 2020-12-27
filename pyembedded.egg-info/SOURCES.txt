@@ -11,5 +11,7 @@ pyembedded.egg-info/requires.txt
 pyembedded.egg-info/top_level.txt
 pyembedded/gps_module/__init__.py
 pyembedded/gps_module/gps.py
+pyembedded/gsm_module/__init__.py
+pyembedded/gsm_module/gsm.py
 pyembedded/rfid_module/__init__.py
 pyembedded/rfid_module/rfid.py

@@ -60,7 +60,7 @@ Note: Use port as 'COM1', 'COM2' etc in case of windows machine. Use port as '/d
     $ if phone.modem_active():
     $     phone.make_call(number='9876543210')
     $     time.sleep(4)
-    $     phone.end_call()
+    $     phone.end_ongoing_call()
 
 Other methods available::
 
