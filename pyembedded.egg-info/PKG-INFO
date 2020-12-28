@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: pyembedded
-Version: 3.2
+Version: 3.3
 Summary: Python library to interface basic embedded modules like RFID, GPS, GSM, LCD (16x2), DC Motor
 Home-page: UNKNOWN
 Author: Abhinav Rawat
@@ -79,6 +79,9 @@ Description: pyembedded
             $ phone.get_modem_model_no()
             $ phone.get_modem_manufacturer()
             $ phone.get_signal_strength()
+            $ phone.send_sms(number="+14691234567", message="Hello World")
+            $ phone.read_all_sms()
+        
         
         
         Change Log
@@ -102,10 +105,13 @@ Description: pyembedded
         - Added modem and phone related functions
         - Added end ongoing call
         
+        3.3 (12/28/2020)
+        -------------------
+        - Added sms functionality in GSM
 Keywords: embedded,rfid,gsm,gps,lcd,motor,raspberry pi
 Platform: UNKNOWN
 Classifier: Development Status :: 5 - Production/Stable
 Classifier: Intended Audience :: Education
-Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: Operating System :: OS Independent
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Programming Language :: Python :: 3

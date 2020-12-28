@@ -71,3 +71,7 @@ Other methods available::
     $ phone.get_modem_model_no()
     $ phone.get_modem_manufacturer()
     $ phone.get_signal_strength()
+    $ phone.send_sms(number="+14691234567", message="Hello World")
+    $ phone.read_all_sms()
+    $ phone.read_sms_by_msg_id(msg_id=3)
+

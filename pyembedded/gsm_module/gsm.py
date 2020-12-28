@@ -218,6 +218,70 @@ class GSM:
             else:
                 return False, "Error"
 
+    def send_sms(self, number, message):
+        """
+        This sends sms to given number
+        :param number: phone number on which sms will be sent
+        :param message: sms content
+        :return: tuple of sms status
+        """
+        text_mode_cmd = "AT+CMGF=1\r"
+        text_mode_cmd = bytes(text_mode_cmd, 'utf-8')
+        self.gsm_serial_port.write(text_mode_cmd)
+        time.sleep(3)
+        text_mode_res = self.gsm_serial_port.read_all()
+        text_mode_res = text_mode_res.decode("utf-8")
+        if 'OK' in text_mode_res:
+            sms_cmd = 'AT+CMGS="' + number + '"\r'
+            sms_cmd = bytes(sms_cmd, 'utf-8')
+            self.gsm_serial_port.write(sms_cmd)
+            time.sleep(3)
+            self.gsm_serial_port.reset_output_buffer()
+            time.sleep(1)
+            self.gsm_serial_port.write(str.encode(message + chr(26)))
+            time.sleep(10)
+            sms_res = self.gsm_serial_port.read_all()
+            sms_res = sms_res.decode('utf-8')
+            if 'OK' in sms_res:
+                return True, "Message sent", sms_res
+            else:
+                return False, "Message not sent", sms_res
+        else:
+            return False, "Unable to activate sms text mode", text_mode_res
+
+    def read_all_sms(self):
+        """
+        This read all sms
+        :return:
+        """
+        read_sms_cmd = 'AT+CMGL="ALL"\r'
+        read_sms_cmd = bytes(read_sms_cmd, 'utf-8')
+        self.gsm_serial_port.write(read_sms_cmd)
+        time.sleep(5)
+        read_sms_res = self.gsm_serial_port.read_all()
+        read_sms_res = read_sms_res.decode('utf-8')
+        if 'OK' in read_sms_res:
+            return True, read_sms_res
+        else:
+            return False, read_sms_res
+
+    def read_sms_by_msg_id(self, msg_id):
+        """
+        This will return the sms content of the given msg id
+        :param msg_id: which msg to read i.e. 1 being the 1st msg in memory
+        :return: tuple of the sms content
+        """
+        read_msg = "AT+CMGR=" + str(msg_id) + "\r"
+        read_msg = bytes(read_msg, 'utf-8')
+        self.gsm_serial_port.write(read_msg)
+        time.sleep(5)
+        msg_res = self.gsm_serial_port.read_all()
+        msg_res = msg_res.decode('utf-8')
+        if 'OK' in msg_res:
+            return True, msg_res
+        else:
+            return False, msg_res
+
 
 if __name__ == '__main__':
     GSM(port="COM1", baud_rate=9600)
