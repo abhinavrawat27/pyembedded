@@ -22,3 +22,11 @@ Change Log
 3.3 (12/28/2020)
 -------------------
 - Added sms functionality in GSM
+
+3.4 (1/2/2021)
+-------------------
+- Added Pi tools
+
+3.5 (1/2/2021)
+-------------------
+- Added Pi tools

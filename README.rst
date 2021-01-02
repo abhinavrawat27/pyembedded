@@ -1,9 +1,9 @@
 pyembedded
 ==========
 
-Python library to interface basic embedded modules like RFID, GPS, GSM, LCD (16x2), DC Motor
+Python library to get data from embedded modules like RFID, GPS, GSM, Raspberry Pi
 
-Note that some of the hardware like RFID, GPS, GSM can directly be interfaced with Windows or Linux based machine but hardware like LCD and DC Motor will require Raspberry Pi or other simillar embedded devices.
+Note that some of the hardware like RFID, GPS, GSM can directly be interfaced with Windows or Linux based machine but some of the modules will require Raspberry Pi or other similar embedded devices.
 
 PyPi: https://pypi.org/project/pyembedded/
 
@@ -75,3 +75,18 @@ Other methods available::
     $ phone.read_all_sms()
     $ phone.read_sms_by_msg_id(msg_id=3)
 
+Raspberry Pi Usage:
+===================
+Run below code to get some useful data from Raspberry Pi
+
+NOTE: Some of the below methods can also run on other linux based os::
+
+    $ from pyembedded.raspberry_pi_tools.raspberrypi import PI
+    $ pi = PI()
+    $ pi.get_ram_info()
+    $ pi.get_disk_space()
+    $ pi.get_cpu_usage()
+    $ pi.get_connected_ip_addr(network='wlan0')
+    $ pi.get_cpu_temp()
+    $ pi.get_wifi_status()
+    
